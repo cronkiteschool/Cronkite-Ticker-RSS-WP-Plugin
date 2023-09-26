@@ -281,3 +281,4 @@ wp-config.php
 
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,windows,linux,vim,wordpress,node
+.php-cs-fixer.cache
