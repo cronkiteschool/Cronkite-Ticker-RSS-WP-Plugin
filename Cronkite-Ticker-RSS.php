@@ -1,23 +1,20 @@
 <?php
 /**
- * Plugin Name:     Cronkite Ticker RSS
- * Plugin URI:      PLUGIN SITE HERE
- * Description:     PLUGIN DESCRIPTION HERE
+ * Plugin Name:     Google Doc to RSS
+ * Description:     Create a simple RSS feed from lines in a Google Doc.
  * Author:          Jeremy Leggat
- * Text Domain:     Cronkite-Ticker-RSS
- * Domain Path:     /languages
  * Version:         0.7.0
  *
- * GitHub Plugin URI: https://github.com/cronkiteschool/Cronkite-Ticker-RSS-WP-Plugin
+ * GitHub Plugin URI: https://github.com/cronkiteschool/GDoc_To_RSS
  * Primary Branch: main
  *
- * @package         Cronkite_Ticker_RSS
+ * @package         GDoc_To_RSS
  */
 
 // Your code starts here.
-class CronkiteTicker
+class GDoc2RSS
 {
-    private $pluginName = "csjticker";
+    private $pluginName = "gdocrss";
 
     public function __construct()
     {
@@ -34,7 +31,7 @@ class CronkiteTicker
         $page_title = 'Ticker Feed Settings Page';
         $menu_title = 'Ticker Feed Plugin';
         $capability = 'manage_options';
-        $slug = 'csjticker_fields';
+        $slug = 'gdoc2rss_fields';
         $callback = array( $this, 'plugin_settings_page_content' );
 
         add_submenu_page('options-general.php', $page_title, $menu_title, $capability, $slug, $callback, );
@@ -46,8 +43,8 @@ class CronkiteTicker
 		<h2>Cronkite Ticker Settings Page</h2>
 		<form method="post" action="options.php">
 		    <?php
-            settings_fields('csjticker_fields');
-        do_settings_sections('csjticker_fields');
+            settings_fields('gdoc2rss_fields');
+        do_settings_sections('gdoc2rss_fields');
         submit_button();
         ?>
 		</form>
@@ -56,7 +53,7 @@ class CronkiteTicker
 
     private function setup_sections()
     {
-        add_settings_section('config_section', 'Configuration', array( $this, 'section_callback' ), 'csjticker_fields');
+        add_settings_section('config_section', 'Configuration', array( $this, 'section_callback' ), 'gdoc2rss_fields');
     }
 
     private function section_callback($arguments)
@@ -98,8 +95,8 @@ class CronkiteTicker
         )
         );
         foreach($fields as $field) {
-            add_settings_field($field['uid'], $field['label'], array( $this, 'field_callback' ), 'csjticker_fields', $field['section'], $field);
-            register_setting('csjticker_fields', $field['uid']);
+            add_settings_field($field['uid'], $field['label'], array( $this, 'field_callback' ), 'gdoc2rss_fields', $field['section'], $field);
+            register_setting('gdoc2rss_fields', $field['uid']);
         }
     }
 
@@ -154,5 +151,5 @@ class CronkiteTicker
 
 }
 
-// Create a new csjticker instance
-new CronkiteTicker();
+// Create a new gdoc2rss instance
+new GDoc2RSS();
