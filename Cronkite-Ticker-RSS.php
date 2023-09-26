@@ -6,7 +6,7 @@
  * Author:          Jeremy Leggat
  * Text Domain:     Cronkite-Ticker-RSS
  * Domain Path:     /languages
- * Version:         0.6.1
+ * Version:         0.7.0
  *
  * GitHub Plugin URI: https://github.com/cronkiteschool/Cronkite-Ticker-RSS-WP-Plugin
  * Primary Branch: main
