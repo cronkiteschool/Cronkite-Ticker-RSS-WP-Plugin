@@ -19,7 +19,7 @@ class CronkiteTicker
 {
     private $pluginName = "csjticker";
 
-    private function __construct()
+    public function __construct()
     {
         // Hook into the admin menu
         add_action('admin_menu', array( $this, 'create_plugin_settings_page' ));
