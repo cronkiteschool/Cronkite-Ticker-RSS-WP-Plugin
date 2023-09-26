@@ -17,9 +17,9 @@
 // Your code starts here.
 class CronkiteTicker
 {
-    public $pluginName = "csjticker";
+    private $pluginName = "csjticker";
 
-	public function __construct() {
+	private function __construct() {
 	    // Hook into the admin menu
 	    add_action( 'admin_menu', array( $this, 'create_plugin_settings_page' ) );
 	    add_action( 'admin_init', array( $this, 'setup_sections' ) );
@@ -27,7 +27,7 @@ class CronkiteTicker
 	    add_action( 'init', array( $this, 'setup_rss' ) );
 	}
 
-    public function create_plugin_settings_page() {
+    private function create_plugin_settings_page() {
 	    // Add the menu item and page
 	    $page_title = 'Ticker Feed Settings Page';
 	    $menu_title = 'Ticker Feed Plugin';
@@ -38,7 +38,7 @@ class CronkiteTicker
 	    add_submenu_page( 'options-general.php', $page_title, $menu_title, $capability, $slug, $callback, );
     }
 
-	public function plugin_settings_page_content() { ?>
+	private function plugin_settings_page_content() { ?>
 	    <div class="wrap">
 		<h2>Cronkite Ticker Settings Page</h2>
 		<form method="post" action="options.php">
@@ -51,11 +51,11 @@ class CronkiteTicker
 	    </div> <?php
 	}
 
-	public function setup_sections() {
+	private function setup_sections() {
 	    add_settings_section( 'config_section', 'Configuration', array( $this, 'section_callback' ), 'csjticker_fields' );
 	}
 
-	public function section_callback( $arguments ) {
+	private function section_callback( $arguments ) {
 	    switch( $arguments['id'] ){
 		case 'config_section':
 		    echo 'Set to read text from a Google Doc to RSS feed for the building\'s Ticker';
@@ -66,7 +66,7 @@ class CronkiteTicker
 	    }
 	}
 
-	public function setup_fields() {
+	private function setup_fields() {
 	    $fields = array(
 		array(
 		    'uid' => 'feed_name',
@@ -97,7 +97,7 @@ class CronkiteTicker
 	    }
 	}
 
-	public function field_callback( $arguments ) {
+	private function field_callback( $arguments ) {
 	    $value = get_option( $arguments['uid'] ); // Get the current value, if there is one
 	    if( ! $value ) { // If no value exists
 		$value = $arguments['default']; // Set to our default
@@ -124,16 +124,16 @@ class CronkiteTicker
 	    }
 	}
 
-	public function setup_rss() {
+	private function setup_rss() {
 	    add_feed( get_option('feed_name'), array( $this, 'rss_callback' ) );
 	}
 
-	public function rss_callback() {
+	private function rss_callback() {
 		$body     = $this->fetch_gdoc_text();
 	    include_once( plugin_dir_path( __FILE__ ) . 'rss-cronkite-ticker.php' );
 	}
 
-	public function fetch_gdoc_text() {
+	private function fetch_gdoc_text() {
 		$url = sprintf("https://docs.google.com/document/d/%s/export?format=txt", get_option('gdoc_id'));
 		$response = wp_safe_remote_get( $url );
 		$body     = wp_remote_retrieve_body( $response );
