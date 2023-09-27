@@ -25,11 +25,11 @@ class GDoc2RSS
         add_action('init', array( $this, 'setup_rss' ));
     }
 
-    private function create_plugin_settings_page()
+    public function create_plugin_settings_page()
     {
         // Add the menu item and page
-        $page_title = 'Ticker Feed Settings Page';
-        $menu_title = 'Ticker Feed Plugin';
+        $page_title = 'Google Doc to RSS Settings Page';
+        $menu_title = 'Google Doc to RSS';
         $capability = 'manage_options';
         $slug = 'gdoc2rss_fields';
         $callback = array( $this, 'plugin_settings_page_content' );
@@ -37,13 +37,13 @@ class GDoc2RSS
         add_submenu_page('options-general.php', $page_title, $menu_title, $capability, $slug, $callback, );
     }
 
-    private function plugin_settings_page_content()
+    public function plugin_settings_page_content()
     { ?>
 	    <div class="wrap">
-		<h2>Cronkite Ticker Settings Page</h2>
+		<h2>Google Doc to RSS Settings Page</h2>
 		<form method="post" action="options.php">
 		    <?php
-            settings_fields('gdoc2rss_fields');
+        settings_fields('gdoc2rss_fields');
         do_settings_sections('gdoc2rss_fields');
         submit_button();
         ?>
@@ -51,12 +51,12 @@ class GDoc2RSS
 	    </div> <?php
     }
 
-    private function setup_sections()
+    public function setup_sections()
     {
         add_settings_section('config_section', 'Configuration', array( $this, 'section_callback' ), 'gdoc2rss_fields');
     }
 
-    private function section_callback($arguments)
+    public function section_callback($arguments)
     {
         switch($arguments['id']) {
             case 'config_section':
@@ -68,7 +68,7 @@ class GDoc2RSS
         }
     }
 
-    private function setup_fields()
+    public function setup_fields()
     {
         $fields = array(
         array(
@@ -100,7 +100,7 @@ class GDoc2RSS
         }
     }
 
-    private function field_callback($arguments)
+    public function field_callback($arguments)
     {
         $value = get_option($arguments['uid']); // Get the current value, if there is one
         if(! $value) { // If no value exists
@@ -128,18 +128,18 @@ class GDoc2RSS
         }
     }
 
-    private function setup_rss()
+    public function setup_rss()
     {
         add_feed(get_option('feed_name'), array( $this, 'rss_callback' ));
     }
 
-    private function rss_callback()
+    public function rss_callback()
     {
         $body     = $this->fetch_gdoc_text();
         include_once(plugin_dir_path(__FILE__) . 'rss-text-lines.php');
     }
 
-    private function fetch_gdoc_text()
+    public function fetch_gdoc_text()
     {
         $url = sprintf("https://docs.google.com/document/d/%s/export?format=txt", get_option('gdoc_id'));
         $response = wp_safe_remote_get($url);
