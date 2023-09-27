@@ -1,6 +1,6 @@
 <?php
 /**
- * RSS2 Feed Template for displaying RSS2 ticker feed.
+ * RSS2 Feed Template for displaying text lines as RSS2 feed.
  */
 define('DONOTCACHEPAGE', true);
 header('Content-Type: '.feed_content_type('rss2').';charset='.get_option('blog_charset'), true);
