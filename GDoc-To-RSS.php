@@ -3,7 +3,7 @@
  * Plugin Name:     Google Doc to RSS
  * Description:     Create a simple RSS feed from lines in a Google Doc.
  * Author:          Jeremy Leggat
- * Version:         0.7.0
+ * Version:         1.0.0
  *
  * GitHub Plugin URI: https://github.com/cronkiteschool/GDoc_To_RSS
  * Primary Branch: main
@@ -12,6 +12,10 @@
  */
 
 // Your code starts here.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
 class GDoc2RSS
 {
     private $pluginName = "gdocrss";
