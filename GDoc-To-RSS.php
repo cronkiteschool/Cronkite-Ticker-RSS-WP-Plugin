@@ -136,7 +136,7 @@ class GDoc2RSS
     private function rss_callback()
     {
         $body     = $this->fetch_gdoc_text();
-        include_once(plugin_dir_path(__FILE__) . 'rss-cronkite-ticker.php');
+        include_once(plugin_dir_path(__FILE__) . 'rss-text-lines.php');
     }
 
     private function fetch_gdoc_text()
