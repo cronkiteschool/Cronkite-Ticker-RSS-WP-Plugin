@@ -1,6 +1,6 @@
 === Google Doc to RSS ===
 Contributors: (this should be a list of wordpress.org userid's)
-Tags: comments, spam
+Tags: google, doc, rss
 Requires at least: 4.5
 Tested up to: 6.3
 Requires PHP: 7.0
