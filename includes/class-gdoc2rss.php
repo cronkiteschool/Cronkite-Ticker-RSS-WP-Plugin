@@ -6,8 +6,8 @@
  * A class definition that includes attributes and functions used across both the
  * public-facing side of the site and the admin area.
  *
- * @link       https://asu.edu
- * @since      1.0.0
+ * @link       https://asudev.jira.com/jira/software/c/projects/CSIT/pages
+ * @since      2.0.0
  *
  * @package    Gdoc2rss
  * @subpackage Gdoc2rss/includes
@@ -22,7 +22,7 @@
  * Also maintains the unique identifier of this plugin as well as the current
  * version of the plugin.
  *
- * @since      1.0.0
+ * @since      2.0.0
  * @package    Gdoc2rss
  * @subpackage Gdoc2rss/includes
  * @author     Jeremy Leggat <jleggat@asu.edu>

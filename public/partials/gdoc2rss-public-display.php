@@ -5,8 +5,8 @@
  *
  * RSS2 Feed Template for displaying text lines as RSS2 feed.
  *
- * @link       https://asu.edu
- * @since      1.0.0
+ * @link       https://asudev.jira.com/jira/software/c/projects/CSIT/pages
+ * @since      2.0.0
  *
  * @package    Gdoc2rss
  * @subpackage Gdoc2rss/public/partials
@@ -28,7 +28,7 @@ do_action('rss_tag_pre', 'rss2');
 	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
 	<?php do_action('rss2_ns'); ?>>
 <channel>
-	<title><?php bloginfo_rss('name'); ?> - <?php get_option('feed_name'); ?> - Feed</title>
+	<title><?php bloginfo_rss('name'); ?> - <?php get_option($this->plugin_name . '_feed_name'); ?> - Feed</title>
 	<link><?php bloginfo_rss('url') ?></link>
 	<description><?php bloginfo_rss('description') ?></description>
 	<?php do_action('rss2_head'); ?>

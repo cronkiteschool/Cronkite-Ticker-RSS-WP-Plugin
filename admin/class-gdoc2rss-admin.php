@@ -3,8 +3,8 @@
 /**
  * The admin-specific functionality of the plugin.
  *
- * @link       https://asu.edu
- * @since      1.0.0
+ * @link       https://asudev.jira.com/jira/software/c/projects/CSIT/pages
+ * @since      2.0.0
  *
  * @package    Gdoc2rss
  * @subpackage Gdoc2rss/admin
@@ -140,18 +140,18 @@ class Gdoc2rss_Admin
     {
         $fields = array(
         array(
-            'uid' => 'feed_name',
+            'uid' => $this->plugin_name . '_feed_name',
             'label' => 'Feed Name',
             'section' => 'config_section',
             'type' => 'text',
             'options' => false,
             'placeholder' => 'feedname',
             'helper' => 'Keep this name simple as it is used to forms your this feed URL.',
-            'supplemental' => sprintf("The feed will be available at %s<em>%s</em>", site_url('/feed/'), get_option('feed_name')),
+            'supplemental' => sprintf("The feed will be available at %s<em>%s</em>", site_url('/feed/'), get_option($this->plugin_name . '_feed_name')),
             'default' => 'ticker'
         ),
         array(
-            'uid' => 'gdoc_id',
+            'uid' =>  $this->plugin_name . '_gdoc_id',
             'label' => 'Google Doc File ID',
             'section' => 'config_section',
             'type' => 'text',

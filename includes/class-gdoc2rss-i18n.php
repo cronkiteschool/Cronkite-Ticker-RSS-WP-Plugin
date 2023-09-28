@@ -6,8 +6,8 @@
  * Loads and defines the internationalization files for this plugin
  * so that it is ready for translation.
  *
- * @link       https://asu.edu
- * @since      1.0.0
+ * @link       https://asudev.jira.com/jira/software/c/projects/CSIT/pages
+ * @since      2.0.0
  *
  * @package    Gdoc2rss
  * @subpackage Gdoc2rss/includes
@@ -19,7 +19,7 @@
  * Loads and defines the internationalization files for this plugin
  * so that it is ready for translation.
  *
- * @since      1.0.0
+ * @since      2.0.0
  * @package    Gdoc2rss
  * @subpackage Gdoc2rss/includes
  * @author     Jeremy Leggat <jleggat@asu.edu>

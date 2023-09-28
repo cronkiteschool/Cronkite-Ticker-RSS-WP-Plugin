@@ -3,8 +3,8 @@
 /**
  * The public-facing functionality of the plugin.
  *
- * @link       https://asu.edu
- * @since      1.0.0
+ * @link       https://asudev.jira.com/jira/software/c/projects/CSIT/pages
+ * @since      2.0.0
  *
  * @package    Gdoc2rss
  * @subpackage Gdoc2rss/public
@@ -106,17 +106,17 @@ class Gdoc2rss_Public
 
     public function add_rss_feed()
     {
-        add_feed(get_option('feed_name'), array( $this, 'rss_callback' ));
+        add_feed(get_option($this->plugin_name . '_feed_name'), array( $this, 'rss_callback' ));
     }
 
     public function rss_callback()
     {
-        include_once(plugin_dir_path(__FILE__) . 'rss-text-lines.php');
+        include(plugin_dir_path(__FILE__) . 'partials/gdoc2rss-public-display.php');
     }
 
     public function fetch_gdoc_text()
     {
-        $url = sprintf("https://docs.google.com/document/d/%s/export?format=txt", get_option('gdoc_id'));
+        $url = sprintf("https://docs.google.com/document/d/%s/export?format=txt", get_option($this->plugin_name . '_gdoc_id'));
         $response = wp_safe_remote_get($url);
         $body     = wp_remote_retrieve_body($response);
         $body     = trim($body, "\xEF\xBB\xBF"); //remove hidden utf characters

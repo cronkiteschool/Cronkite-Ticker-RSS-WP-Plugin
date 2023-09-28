@@ -9,14 +9,14 @@
  * that starts the plugin.
  *
  * @link              https://asudev.jira.com/jira/software/c/projects/CSIT/pages
- * @since             1.0.0
+ * @since             0.5.0
  * @package           Gdoc2rss
  *
  * @wordpress-plugin
  * Plugin Name:       Google Doc to RSS
- * Plugin URI:        https://asu.edu
+ * Plugin URI:        https://asudev.jira.com/jira/software/c/projects/CSIT/pages
  * Description:       Create a simple RSS feed from lines in a Google Doc.
- * Version:           1.0.0
+ * Version:           2.0.0
  * Author:            Jeremy Leggat
  * Author URI:        https://asudev.jira.com/jira/software/c/projects/CSIT/pages
  * License:           GPL-2.0+

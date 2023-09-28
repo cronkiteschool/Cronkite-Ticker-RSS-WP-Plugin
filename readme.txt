@@ -4,7 +4,7 @@ Tags: google, doc, rss
 Requires at least: 4.5
 Tested up to: 6.3
 Requires PHP: 7.0
-Stable tag: 1.0.0
+Stable tag: 2.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,6 +23,9 @@ This plugin expects the google doc id to connect to the doc.
 5. Optionally set the slug to use for feed link. 
 
 == Changelog ==
+
+= 2.0 =
+* Restructured plugin using boilerplate code from https://wppb.me
 
 = 1.0 =
 * Renamed plugin.

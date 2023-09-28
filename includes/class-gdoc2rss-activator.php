@@ -3,8 +3,8 @@
 /**
  * Fired during plugin activation
  *
- * @link       https://asu.edu
- * @since      1.0.0
+ * @link       https://asudev.jira.com/jira/software/c/projects/CSIT/pages
+ * @since      2.0.0
  *
  * @package    Gdoc2rss
  * @subpackage Gdoc2rss/includes
@@ -15,7 +15,7 @@
  *
  * This class defines all code necessary to run during the plugin's activation.
  *
- * @since      1.0.0
+ * @since      2.0.0
  * @package    Gdoc2rss
  * @subpackage Gdoc2rss/includes
  * @author     Jeremy Leggat <jleggat@asu.edu>
